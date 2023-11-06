@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "League Spartan", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  padding: 3rem 2.4rem;
+  background: #3a4663;
+}
+
+.theme2 {
+  background: #e6e6e6;
+}
+
+.theme3 {
+  background: #17062a;
+}
+
+/* -------------------------- HEADER ------------------------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 32.7rem;
+  padding-left: 0.7rem;
+}
+
+h1 {
+  color: #fff;
+  font-size: 3.2rem;
+  letter-spacing: -0.533px;
+}
+
+.theme2 h1 {
+  color: #36362c;
+}
+
+.theme3 h1 {
+  color: #ffe53d;
+}
+
+.themes {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 2.6rem;
+  position: relative;
+}
+
+h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.theme2 h3 {
+  color: #36362c;
+}
+
+.theme2 h3 {
+  color: #ffe53d;
+}
+
+#switcher {
+  width: 6.4rem;
+  position: absolute;
+  opacity: 0;
+  top: 8px;
+  left: 71px;
+}
+
+#switcher:hover {
+  cursor: pointer;
+}
+
+.rangeStyle {
+  width: 71px;
+  height: 25px;
+  border-radius: 13px;
+  background: #242d44;
+  position: relative;
+}
+
+.theme2 .rangeStyle {
+  background: #d2cdcd;
+}
+
+.theme3 .rangeStyle {
+  background: #1e0936;
+}
+
+#circle {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+
+.theme3 .rangeStyleCircle {
+  fill: #00ded0;
+}
+
+.themeNumbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  position: absolute;
+  top: -1.4rem;
+  left: 8.1rem;
+}
+
+.themeNumbers span {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.theme2 .themeNumbers span {
+  color: #36362c;
+}
+
+.theme3 .themeNumbers span {
+  color: #ffe53d;
+}
+
+/* ----------------------- MAIN ---------------------- */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32.7rem;
+  gap: 2.4rem;
+}
+
+.display {
+  border-radius: 10px;
+  background: #181f33;
+  padding: 2.9rem 2.4rem 2.4rem 0;
+  width: 32.7rem;
+  height: 8.8rem;
+  text-align: right;
+  color: #fff;
+  font-size: 4rem;
+  letter-spacing: -0.667px;
+}
+
+.theme2 .display {
+  background: #eee;
+  color: #36362c;
+}
+
+.theme3 .display {
+  background: #1e0936;
+  color: #ffe53d;
+}
+
+.keyboard {
+  border-radius: 1rem;
+  background: #242d44;
+  padding: 2.4rem;
+}
+
+.theme2 .keyboard {
+  background: #d2cdcd;
+}
+
+.theme3 .keyboard {
+  background: #1e0936;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1.3rem;
+}
+
+.grid-container :nth-child(17) {
+  grid-column: span 2;
+}
+
+.grid-container :nth-child(18) {
+  grid-column: span 2;
+}
+
+.grid-item {
+  cursor: pointer;
+}
+
+.numbers {
+  width: 6rem;
+  height: 6.4rem;
+  border-radius: 5px;
+  background: #eae3dc;
+  box-shadow: 0px -4px 0px 0px #b3a497 inset;
+
+  padding-top: 1.8rem;
+  text-align: center;
+  color: #434a59;
+  font-size: 3.2rem;
+  letter-spacing: -0.533px;
+}
+
+.theme2 .numbers {
+  background: #e5e4e1;
+  box-shadow: 0px -4px 0px 0px #a79e91 inset;
+  color: #36362c;
+}
+
+.theme3 .numbers {
+  background: #331c4d;
+  color: #ffe53d;
+  box-shadow: 0px -4px 0px 0px #881c9e inset;
+}
+
+.delete {
+  width: 6rem;
+  height: 6.4rem;
+  border-radius: 5px;
+  background: #647198;
+  box-shadow: 0px -4px 0px 0px #414e73 inset;
+
+  padding-top: 2.4rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: -0.333px;
+  text-transform: uppercase;
+}
+
+.theme2 .delete {
+  background: #378187;
+  box-shadow: 0px -4px 0px 0px #1b6066 inset;
+}
+
+.theme3 .delete {
+  background: #56077c;
+  box-shadow: 0px -4px 0px 0px #be15f4 inset;
+}
+
+.reset {
+  width: 13.3rem;
+  height: 6.4rem;
+  border-radius: 5px;
+  background: #647198;
+  box-shadow: 0px -4px 0px 0px #414e73 inset;
+
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: -0.333px;
+  text-transform: uppercase;
+  padding-top: 2.3rem;
+}
+
+.theme2 .reset {
+  background: #378187;
+  box-shadow: 0px -4px 0px 0px #1b6066 inset;
+}
+
+.theme3 .reset {
+  background: #56077c;
+  box-shadow: 0px -4px 0px 0px #be15f4 inset;
+}
+
+.equal {
+  border-radius: 5px;
+  background: #d03f2f;
+  box-shadow: 0px -4px 0px 0px #93261a inset;
+
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: -0.333px;
+  text-transform: uppercase;
+  padding-top: 2.3rem;
+}
+
+.theme2 .equal {
+  background: #c85402;
+  box-shadow: 0px -4px 0px 0px #873901 inset;
+}
+
+.theme3 .equal {
+  background: #00ded0;
+  box-shadow: 0px -4px 0px 0px #6cf9f1 inset;
+}

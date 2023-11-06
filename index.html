@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Calculator app</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>calc</h1>
+
+      <div class="themes">
+        <h3>theme</h3>
+
+        <div class="rangeStyle">
+          <svg
+            id="circle"
+            class="rangeStyleCircle"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <circle
+              class="rangeStyleCircle"
+              cx="8"
+              cy="8"
+              r="8"
+              fill="#D03F2F"
+            />
+          </svg>
+        </div>
+
+        <div class="themeNumbers">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+
+        <input
+          id="switcher"
+          type="range"
+          name="range"
+          min="1"
+          max="3"
+          step="1"
+        />
+      </div>
+    </header>
+
+    <main>
+      <div class="display">1989</div>
+
+      <div class="keyboard">
+        <div class="grid-container">
+          <div class="grid-item numbers number">7</div>
+          <div class="grid-item numbers number">8</div>
+          <div class="grid-item numbers number">9</div>
+          <div class="grid-item delete">del</div>
+
+          <div class="grid-item numbers number">4</div>
+          <div class="grid-item numbers number">5</div>
+          <div class="grid-item numbers number">6</div>
+          <div class="grid-item numbers operator">+</div>
+
+          <div class="grid-item numbers number">1</div>
+          <div class="grid-item numbers number">2</div>
+          <div class="grid-item numbers number">3</div>
+          <div class="grid-item numbers operator">-</div>
+
+          <div class="grid-item numbers operator">.</div>
+          <div class="grid-item numbers number">0</div>
+          <div class="grid-item numbers operator">/</div>
+          <div class="grid-item numbers operator">x</div>
+
+          <div class="grid-item reset">reset</div>
+          <div class="grid-item equal operator">=</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

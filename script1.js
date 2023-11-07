@@ -7,6 +7,7 @@ let operator = "";
 buttons.map((button) => {
   button.addEventListener("click", (e) => {
     let btnText = e.target.textContent;
+    let lastChar = display.textContent.at(-1);
 
     if (btnText === "reset") {
       display.textContent = "";
@@ -22,15 +23,15 @@ buttons.map((button) => {
       display.textContent = result;
       calculation = [];
       operator = "";
-    } else if (isNaN(parseInt(btnText))) {
-      operator = btnText;
-      calculation.push(display.textContent);
-      calculation.push(operator);
-      display.textContent = ""; // -- მინუსებზე ურევს თუ უდრის btnText
-      console.log(display.textContent);
+    } else if (
+      lastChar === "+" ||
+      lastChar === "-" ||
+      lastChar === "x" ||
+      lastChar === "/"
+    ) {
+      return;
     } else {
       display.textContent += btnText;
-      console.log(display.textContent);
     }
   });
 });

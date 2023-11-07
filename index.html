@@ -10,7 +10,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script1.js" defer></script>
+    <script src="script2.js" defer></script>
     <title>Calculator app</title>
   </head>
 
@@ -63,28 +63,28 @@
 
       <div class="keyboard">
         <div class="grid-container">
-          <div class="grid-item numbers number">7</div>
-          <div class="grid-item numbers number">8</div>
-          <div class="grid-item numbers number">9</div>
-          <div class="grid-item delete">del</div>
+          <div data-value="7" class="grid-item numbers number">7</div>
+          <div data-value="8" class="grid-item numbers number">8</div>
+          <div data-value="9" class="grid-item numbers number">9</div>
+          <div data-value="del" class="grid-item delete">del</div>
 
-          <div class="grid-item numbers number">4</div>
-          <div class="grid-item numbers number">5</div>
-          <div class="grid-item numbers number">6</div>
-          <div class="grid-item numbers operator">+</div>
+          <div data-value="4" class="grid-item numbers number">4</div>
+          <div data-value="5" class="grid-item numbers number">5</div>
+          <div data-value="6" class="grid-item numbers number">6</div>
+          <div data-value="+" class="grid-item numbers operator">+</div>
 
-          <div class="grid-item numbers number">1</div>
-          <div class="grid-item numbers number">2</div>
-          <div class="grid-item numbers number">3</div>
-          <div class="grid-item numbers operator">-</div>
+          <div data-value="1" class="grid-item numbers number">1</div>
+          <div data-value="2" class="grid-item numbers number">2</div>
+          <div data-value="3" class="grid-item numbers number">3</div>
+          <div data-value="-" class="grid-item numbers operator">-</div>
 
-          <div class="grid-item numbers operator">.</div>
-          <div class="grid-item numbers number">0</div>
-          <div class="grid-item numbers operator">/</div>
-          <div class="grid-item numbers operator">x</div>
+          <div data-value="." class="grid-item numbers operator">.</div>
+          <div data-value="0" class="grid-item numbers number">0</div>
+          <div data-value="/" class="grid-item numbers operator">/</div>
+          <div data-value="*" class="grid-item numbers operator">x</div>
 
-          <div class="grid-item reset">reset</div>
-          <div class="grid-item equal operator">=</div>
+          <div data-value="reset" class="grid-item reset">reset</div>
+          <div data-value="=" class="grid-item equal operator">=</div>
         </div>
       </div>
     </main>

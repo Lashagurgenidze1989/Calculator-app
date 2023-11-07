@@ -24,10 +24,14 @@ buttons.map((button) => {
       calculation = [];
       operator = "";
     } else if (
-      lastChar === "+" ||
-      lastChar === "-" ||
-      lastChar === "x" ||
-      lastChar === "/"
+      (btnText === "+" ||
+        btnText === "-" ||
+        btnText === "x" ||
+        btnText === "/") &&
+      (lastChar === "+" ||
+        lastChar === "-" ||
+        lastChar === "x" ||
+        lastChar === "/")
     ) {
       return;
     } else {

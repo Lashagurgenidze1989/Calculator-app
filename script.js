@@ -27,7 +27,6 @@ const reset = document.querySelector(".reset");
 const equal = document.querySelector(".equal");
 
 let currentInput = "";
-let replaced = "";
 
 function updateDisplay() {
   display.textContent = currentInput;

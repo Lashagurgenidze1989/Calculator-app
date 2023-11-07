@@ -1,31 +1,39 @@
-const buttons = document.querySelectorAll(".grid-item");
+const buttons = Array.from(document.querySelectorAll(".grid-item"));
 const display = document.querySelector(".display");
 
 let calculation = [];
-let strCalculation;
+let operator = "";
 
-function calculate(button) {
-  const value = button.textContent;
+buttons.map((button) => {
+  button.addEventListener("click", (e) => {
+    let btnText = e.target.textContent;
 
-  if (value === "reset") {
-    calculation = [];
-    display.textContent = ".";
-  } else if (value === "=") {
-    display.textContent = eval(strCalculation.replaceAll("x", "*"));
-  } else if (value === "del") {
-    display.textContent = strCalculation.slice(0, -1);
-    console.log(strCalculation);
-  } else {
-    calculation.push(value);
-    strCalculation = calculation.join("");
-    display.textContent = strCalculation;
-  }
-}
-
-buttons.forEach((button) =>
-  button.addEventListener("click", () => calculate(button))
-);
-
+    if (btnText === "reset") {
+      display.textContent = "";
+      calculation = [];
+      operator = "";
+    } else if (btnText === "del") {
+      display.textContent = display.textContent.slice(0, -1);
+    } else if (btnText === ".") {
+      if (!display.textContent.includes(".")) display.textContent += btnText;
+    } else if (btnText === "=") {
+      calculation.push(display.textContent);
+      let result = eval(calculation.join(" ").replaceAll("x", "*"));
+      display.textContent = result;
+      calculation = [];
+      operator = "";
+    } else if (isNaN(parseInt(btnText))) {
+      operator = btnText;
+      calculation.push(display.textContent);
+      calculation.push(operator);
+      display.textContent = ""; // -- მინუსებზე ურევს თუ უდრის btnText
+      console.log(display.textContent);
+    } else {
+      display.textContent += btnText;
+      console.log(display.textContent);
+    }
+  });
+});
 //////////////////////////////  body type change /////////////////////////////
 
 const body = document.querySelector("body");

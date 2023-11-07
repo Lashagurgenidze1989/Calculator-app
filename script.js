@@ -1,17 +1,23 @@
-/* const body = document.querySelector("body");
+const body = document.querySelector("body");
 const switcher = document.querySelector("#switcher");
 const orangeCircle = document.querySelector("#circle");
 
-console.log(body);
-
-switcher.addEventListener("input", () => switchStyles());
+switcher.addEventListener("input", switchStyles);
 
 function switchStyles(event) {
-  if (Number(event.target.value) == 2) {
+  if (Number(event.target.value) === 2) {
     orangeCircle.style.left = "27px";
     body.classList.add("theme2");
+    body.classList.remove("theme3");
+  } else if (Number(event.target.value) === 3) {
+    orangeCircle.style.left = "51px";
+    body.classList.add("theme3");
+    body.classList.remove("theme2");
+  } else {
+    orangeCircle.style.left = "6px";
+    body.classList.remove("theme2", "theme3");
   }
-} */
+}
 
 const display = document.querySelector(".display");
 const number = document.querySelectorAll(".number");
@@ -21,9 +27,7 @@ const reset = document.querySelector(".reset");
 const equal = document.querySelector(".equal");
 
 let currentInput = "";
-let operator = "";
-let prevInput = "";
-let result = 0;
+let replaced = "";
 
 function updateDisplay() {
   display.textContent = currentInput;
@@ -38,14 +42,8 @@ number.forEach((num) => {
 
 operators.forEach((oper) => {
   oper.addEventListener("click", () => {
-    if (currentInput !== "") {
-      if (prevInput !== "") {
-        calculate();
-      }
-      operator = oper.textContent;
-      prevInput = currentInput;
-      currentInput = "";
-    }
+    currentInput += oper.textContent;
+    updateDisplay();
   });
 });
 
@@ -56,43 +54,16 @@ delet.addEventListener("click", () => {
 
 reset.addEventListener("click", () => {
   currentInput = "";
-  operator = "";
-  prevInput = "";
-  result = 0;
   updateDisplay();
 });
 
 equal.addEventListener("click", () => {
-  if (prevInput !== "" && currentInput !== "") {
-    calculate();
-    prevInput = "";
-    operator = "";
-  }
+  calculate();
+  updateDisplay();
 });
 
 function calculate() {
-  if (prevInput !== "" && currentInput !== "") {
-    switch (operator) {
-      case "+":
-        result = parseFloat(prevInput) + parseFloat(currentInput);
-        break;
-      case "-":
-        result = parseFloat(prevInput) - parseFloat(currentInput);
-        break;
-      case "x":
-        result = parseFloat(prevInput) * parseFloat(currentInput);
-        break;
-      case "/":
-        if (currentInput !== "0") {
-          result = parseFloat(prevInput) / parseFloat(currentInput);
-        } else {
-          result = "Error";
-        }
-        break;
-      default:
-        result = "Error";
-    }
-    currentInput = result; /* .toString(); */
-    updateDisplay();
-  }
+  replaced = replaced.replaceAll("x", "*");
+  currentInput = eval(replaced);
+  console.log(currentInput);
 }
